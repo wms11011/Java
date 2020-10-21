@@ -23,13 +23,11 @@ public class copyTest {
             fos = new FileOutputStream("E:\\ws10\\数组拷贝内存图.png",true);
             // 对文件进行复制
             byte[] bytes = new byte[1024*1024];
-            int reanCount = 0;
-            while((reanCount = fis.read(bytes)) != -1) {
-                fos.write(bytes,0,reanCount);
+            int readCount = 0;
+            while((readCount = fis.read(bytes)) != -1) {
+                fos.write(bytes,0,readCount);
             }
             fos.flush();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
